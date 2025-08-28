@@ -1,0 +1,98 @@
+/* Basic modern, responsive styling */
+:root {
+  --bg: #0f172a;
+  --card: #111827;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --accent: #22c55e;
+  --danger: #ef4444;
+  --link: #60a5fa;
+  --border: #1f2937;
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: radial-gradient(1200px 600px at 10% 0%, #0b1020 0%, var(--bg) 50%);
+}
+
+h1 { margin: 0; font-size: 1.75rem; }
+.subtitle { margin: 6px 0 0; color: var(--muted); }
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00));
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 880px) {
+  .grid { grid-template-columns: 1fr 1.2fr; }
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  gap: 10px;
+}
+
+.field { display: flex; flex-direction: column; }
+.field label { font-size: 0.85rem; color: var(--muted); margin-bottom: 6px; }
+
+input[type="text"] {
+  padding: 10px 12px;
+  background: #0b1224;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+button {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  color: #0b1224;
+  background: var(--accent);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button[disabled] { opacity: 0.5; cursor: not-allowed; }
+
+.actions { display: flex; align-items: end; }
+
+.status { margin-top: 12px; color: var(--muted); min-height: 20px; }
+
+.info { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-bottom: 12px; }
+
+.predict { display: flex; gap: 8px; }
+.predict-btn { background: #1f9d55; color: #052e16; }
+#btn-down { background: var(--danger); color: #2c0b0e; }
+
+.secondary-actions { margin-top: 8px; }
+.link { background: transparent; color: var(--link); border-color: var(--border); }
+
+.chart-card { display: grid; align-items: center; }
+
+.footer { color: var(--muted); text-align: center; }
+
+a { color: var(--link); }
+
