@@ -1,0 +1,157 @@
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji';
+  color: #0f172a;
+  background: #f8fafc;
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 24px 16px 56px;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+.header h1 {
+  margin: 0 0 8px 0;
+  font-size: 28px;
+}
+.header p {
+  margin: 0;
+  color: #475569;
+}
+
+.controls {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.ticker-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.ticker-row {
+  display: flex;
+  gap: 8px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: #0ea5e9;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+button.secondary {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+button.up { background: #22c55e; }
+button.down { background: #ef4444; }
+button.next { background: #6366f1; }
+
+.hint {
+  margin-top: 8px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.error {
+  margin-top: 10px;
+  color: #b91c1c;
+  font-weight: 600;
+}
+
+.hidden { display: none; }
+
+.game {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.game-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.game-meta {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 12px 24px;
+}
+.meta-label {
+  color: #475569;
+  margin-right: 6px;
+}
+.scoreboard {
+  display: flex;
+}
+.score-box {
+  background: #0ea5e9;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+.score {
+  font-size: 18px;
+  font-weight: 700;
+  margin-left: 8px;
+}
+
+.chart-wrap { margin: 14px 0; }
+
+.predict-wrap {
+  display: grid;
+  gap: 10px;
+}
+.predict-buttons {
+  display: flex;
+  gap: 8px;
+}
+.result {
+  min-height: 22px;
+}
+
+.game-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.footer {
+  margin-top: 24px;
+  color: #64748b;
+  font-size: 14px;
+}
+.footer a { color: #0ea5e9; }
+
+@media (max-width: 640px) {
+  .game-meta { grid-template-columns: 1fr; }
+}
+
