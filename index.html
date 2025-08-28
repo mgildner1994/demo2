@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Direction Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Stock Direction Game</h1>
+            <p>Pick a real stock, see the last 7 trading days, and guess tomorrow's move.</p>
+        </header>
+
+        <section class="controls">
+            <form id="ticker-form" class="ticker-form">
+                <label for="ticker-input">Stock ticker</label>
+                <div class="ticker-row">
+                    <input id="ticker-input" type="text" placeholder="e.g., MSFT, AAPL, COF" autocomplete="off" required />
+                    <button id="start-btn" type="submit">Start Game</button>
+                </div>
+                <div class="hint">Using live data from Alpha Vantage. Be mindful of API rate limits.</div>
+            </form>
+            <div id="error" class="error" role="alert" aria-live="polite"></div>
+        </section>
+
+        <section id="game-section" class="game hidden">
+            <div class="game-top">
+                <div class="game-meta">
+                    <div><span class="meta-label">Ticker:</span> <span id="meta-ticker">-</span></div>
+                    <div><span class="meta-label">Current date:</span> <span id="current-date">-</span></div>
+                    <div><span class="meta-label">Current close:</span> <span id="current-close">-</span></div>
+                </div>
+                <div class="scoreboard">
+                    <div class="score-box">
+                        <span class="meta-label">Score</span>
+                        <span id="score" class="score">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-wrap">
+                <canvas id="price-chart" height="140"></canvas>
+            </div>
+
+            <div class="predict-wrap">
+                <div class="predict-text">Will price go up or down tomorrow?</div>
+                <div class="predict-buttons">
+                    <button id="btn-up" class="btn up" disabled>Up</button>
+                    <button id="btn-down" class="btn down" disabled>Down</button>
+                </div>
+                <div id="result" class="result" aria-live="polite"></div>
+            </div>
+
+            <div class="game-actions">
+                <button id="btn-next" class="btn next" disabled>Reveal Next Day</button>
+                <button id="btn-end" class="btn secondary">End Game</button>
+                <button id="btn-restart" class="btn secondary hidden">New Game</button>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div>
+                Data provided by <a href="https://www.alphavantage.co/" target="_blank" rel="noreferrer noopener">Alpha Vantage</a>.
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
+
